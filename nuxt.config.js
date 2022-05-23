@@ -18,18 +18,24 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/styles/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~/plugins/vue-modal.js', mode: 'client'},
+    {src: '~/plugins/vue-agile.js', mode: 'client'},
+    {src: '~/plugins/vue-select.js'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    '~/components',
+    { path: '~/components/layouts', extensions: ['vue'] }
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
   publicRuntimeConfig: {
     axios: {
       baseURL: process.env.NUXT_BASE_URL
@@ -42,5 +48,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vue-agile'],
+    loaders: {
+      sass: {
+        implementation: require('sass'),
+      },
+      scss: {
+        implementation: require('sass'),
+      },
+    }
   }
 }

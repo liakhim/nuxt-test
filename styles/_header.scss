@@ -1,0 +1,210 @@
+.header {
+  height: 70px;
+  box-shadow: 0 0 15px rgb(170 170 170 / 25%);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 1000;
+  .cb-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1870px;
+    width: 100%;
+    margin: auto;
+    padding: 0 10px;
+    .burger {
+      display: none;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      min-width: 140px;
+      &-icon {
+        img {
+          width: 24px;
+          height: 24px;
+          max-width: 24px;
+          min-width: 24px;
+        }
+      }
+      &-text {
+        margin-left: 8px;
+        img {
+        }
+      }
+    }
+    .menu {
+      width: 100%;
+      height: 100%;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-overlay {
+        display: none;
+      }
+      &-header {
+        display: none;
+      }
+      &-list {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &-item {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          border-bottom: 2px solid transparent;
+          padding: 0 16px;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            .submenu {
+              display: block;
+            }
+          }
+          .submenu {
+            position: absolute;
+            display: none;
+            left: 0;
+            top: 60px;
+            z-index: 10000;
+            width: 180px;
+            border-radius: 5px;
+            padding: 5px;
+            background: #fff;
+            border: 1px solid #CCCCCC;
+            a {
+              display: flex;
+              align-self: center;
+              text-align: left;
+              align-items: center;
+              width: 100%;
+              font-family: "SF UI Text", sans-serif;
+              font-size: 0.875rem;
+              line-height: 1.0625;
+              font-weight: 400;
+              color: #2F3744;
+              height: 48px;
+              padding-left: 12px;
+              &:hover {
+                background: #c9c9c93b;
+              }
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              transform: rotate(45deg);
+              border-top: 1px solid #CCCCCC;
+              border-left: 1px solid #CCCCCC;
+              background: #fff;
+              left: 20px;
+              top: -7px;
+              z-index: 1;
+            }
+          }
+          a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
+          &:hover {}
+        }
+      }
+      .buttons {
+        width: auto;
+      }
+    }
+  }
+}
+.dropdown-links {
+  position: absolute;
+  top: 100%
+}
+@media (max-width: 769px) {
+  .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    .cb-container {
+      .burger {
+        display: block;
+      }
+      .menu {
+        width: 260px;
+        transition: 0.4s;
+        position: fixed;
+        flex-direction: column;
+        left: -260px;
+        top: 0;
+        background: #fff;
+        z-index: 1000;
+        &-header {
+          display: block;
+          background: #fff;
+          width: 100%;
+          .logo {
+            display: flex;
+          }
+        }
+        .menu-overlay {
+          display: none;
+          top: 0;
+          left: 0;
+          position: fixed;
+          width: 100vw;
+          height: 100%;
+          z-index: -1;
+          background: #00000020;
+        }
+        &-list {
+          width: 260px;
+          flex-direction: column;
+          align-items: flex-start;
+          background: #fff;
+          &-item {
+            height: auto;
+            flex-direction: column;
+            align-items: flex-start;
+            .submenu {
+              position: relative;
+              display: block;
+              top: 0;
+              border: none;
+              &:before {
+                display: none;
+              }
+              a {
+                padding: 0;
+                height: auto;
+              }
+            }
+          }
+        }
+        .buttons {
+          background: #fff;
+          width: 100%;
+          button {
+            background: red;
+          }
+        }
+      }
+      .menu.show {
+        left: 0;
+        .menu-overlay {
+          display: block;
+        }
+      }
+    }
+  }
+}
