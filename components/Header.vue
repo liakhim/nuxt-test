@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="cb-container">
+    <div class="header-container">
       <div class="burger" @click="menuState = !menuState">
         <img src="http://convertbomb-landing.fakebook.press/assets/img/header/burger.svg" alt="">
       </div>
@@ -12,12 +12,12 @@
         </div>
         <ul class="menu-list">
           <li class="menu-list-item">
-            <span>Solutions</span>
+            <span class="not-link">Solutions</span>
             <div class="submenu">
               <ul>
-                <li><a href="#">First</a></li>
-                <li><a href="#">Second</a></li>
-                <li><a href="#">Third</a></li>
+                <li><NuxtLink to="/facebook-ads-creation">Ads Manager</NuxtLink></li>
+                <li><NuxtLink to="/facebook-ads-automation">Automated Rules</NuxtLink></li>
+                <li><NuxtLink to="/facebook-ads-targeting">Interest Targeting</NuxtLink></li>
               </ul>
             </div>
           </li>
@@ -26,8 +26,9 @@
           <li class="menu-list-item"><NuxtLink to="/blog">Blog</NuxtLink></li>
         </ul>
         <div class="buttons">
-          <button>test1</button>
-          <button>test2</button>
+          <button class="custom-button violet outline">Log in</button>
+          <button class="custom-button violet">Sign up</button>
+          <button class="custom-button violet">Dashboard</button>
         </div>
       </div>
     </div>

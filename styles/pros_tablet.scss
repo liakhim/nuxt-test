@@ -1,0 +1,27 @@
+@media screen and (max-width: 1280px) {
+  .Pros {
+     margin-top: 90px;
+
+    .ProsContainer {
+      row-gap: 72px;
+
+      .ProsTitle {
+        row-gap: 30px;
+
+        h2 {
+          font-size: 2rem; // 32px
+        }
+      }
+
+      .ProsItems {
+        .ProsItem {
+          min-width: 260px;
+          width:     260px;
+          max-width: 260px;
+
+          br { display: none; }
+        }
+      }
+    }
+  }
+}

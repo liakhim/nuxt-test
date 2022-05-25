@@ -10,9 +10,6 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -36,6 +33,10 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
+  env: {
+    NUXT_BASE_URL: process.env.NUXT_BASE_URL,
+    NUXT_BASE_DASHBOARD_URL: process.env.NUXT_BASE_DASHBOARD_URL
+  },
   publicRuntimeConfig: {
     axios: {
       baseURL: process.env.NUXT_BASE_URL

@@ -1,0 +1,48 @@
+.custom-button {
+  font-family: 'SF UI Text',sans-serif;
+  font-size: .9375rem;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 0 36px;
+  transition: .4s;
+  line-height: 40px;
+}
+.custom-button.violet {
+  border: 2px solid #8378ec;
+  &:hover {
+    background: #8378ec;
+    color: #ffffff
+  }
+}
+.custom-button.violet.outline {
+  border: 2px solid transparent;
+  &:hover {
+    background: transparent;
+    border: 2px solid #8378ec;
+    color: #333333;
+  }
+}
+.custom-button.green {
+  border: 2px solid #1bb469;
+  padding: 0 30px;
+  line-height: 40px;
+  color: #1bb469;
+  &:hover {
+    background: #1bb469;
+    color: #ffffff
+  }
+}
+.form-button {
+  font-family: "SF UI Text",sans-serif;
+  padding: 2px 4px 0 0;
+  border-radius: 0 12px 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4375;
+  color: #fff;
+  height: 50px;
+  min-width: 129px;
+}
+.form-button.green {
+  background: linear-gradient(180deg,#00a65a 0,#0cc26f 100%);
+}
