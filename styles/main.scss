@@ -1,9 +1,9 @@
 @import "fonts";
 @import "normalize";
-
 @import "header";
 @import "buttons";
-
+@import "inputs";
+@import "dropdown";
 
 .blog-container {
   width: calc(100% - 100px);
@@ -15,8 +15,9 @@
     max-width: 100%;
   }
 }
-.blog-container.article-container {
+.blog-container.article-container-wrap {
   max-width: 1440px;
+  padding: 60px 0 0 0;
 }
 .aside-wrapper {
   position: sticky;

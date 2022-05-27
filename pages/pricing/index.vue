@@ -1,6 +1,6 @@
 <template>
   <LandingLayout>
-    <section class="Plans plans" v-if="plans">
+    <section class="Plans plans MainLayoutMain" v-if="plans">
       <div class="pros__container plans-title">
         <h3>Plans & Pricing</h3>
         <p>Choose the ConvertBomb plan that will work best for you</p>
@@ -109,6 +109,7 @@
     },
     data () {
       return {
+        width: 0,
         plans: [
           {
             title: 'Personal',
@@ -218,6 +219,9 @@
           this.$refs.carousel.goTo(index)
         }
       }
+    },
+    mounted () {
+      this.width = window.screen.width
     }
   }
 </script>
@@ -262,6 +266,7 @@
     width: 100%;
     padding: 0 0 100px 0;
     font-family: "SF UI Text", sans-serif;
+    margin: auto;
     &-title {
       display: flex;
       flex-direction: column;
@@ -473,7 +478,7 @@
       padding: 0 0 75px 0;
       &-title {
         padding: 0 20px;
-        margin: 50px 0 0 0;
+        margin: 50px 0 0 0!important;
       }
       &-content {
         width: 100%;

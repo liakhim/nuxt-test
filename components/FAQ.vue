@@ -1,5 +1,5 @@
 <template>
-  <section class="FAQ">
+  <section class="FAQ MainLayoutMain">
     <div class="FAQContainer">
       <div class="FAQTitle">
         <h2>Frequently Asked Questions</h2>
@@ -131,7 +131,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 160px 0 0 0;
+    margin: 160px auto 0 auto;
     transition: all 0.33s ease;
     .FAQContainer {
       display: flex;
@@ -140,7 +140,6 @@
       align-items: center;
       row-gap: 60px;
       max-width: 100%;
-
       transition: all 0.33s ease;
       .FAQTitle {
         align-self: flex-start;
@@ -159,6 +158,7 @@
         justify-content: space-between;
         align-items: flex-start;
         column-gap: 90px;
+        margin-bottom: 90px;
         .FAQLeft {
           display: flex;
           flex-direction: column;
@@ -264,8 +264,10 @@
   // @import 'faq_mobile';
   @media screen and (max-width: 899px) {
     .FAQ {
+      margin-top: 0;
       .FAQContainer {
         row-gap: 20px;
+        padding: 0 10px;
         .FAQTitle {
           h2 {
             font-size: 2rem;

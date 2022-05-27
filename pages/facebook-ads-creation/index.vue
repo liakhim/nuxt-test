@@ -200,7 +200,7 @@
             </div>
           </div>
         </section>                        <!-- v   Reviews    v -->
-        //= ../../html-modules/trial-form.html
+        <TrialForm/>
       </main>
     </template>
   </LandingLayout>
@@ -208,6 +208,18 @@
 <script>
   export default {
     name: 'FacebookAdsCreation',
+    head() {
+      return {
+        title: 'ConvertBomb | Efficiently Manage Your Digital Marketing',
+        meta: [
+          {
+            hid: '',
+            name: 'description',
+            content: ``
+          }
+        ]
+      }
+    },
     data () {
       return {
         email: ''
@@ -215,8 +227,7 @@
     },
     methods: {
       redirectTo () {
-        alert('redirect')
-        document.location.replace(process.env.NUXT_BASE_DASHBOARD_URL + 'registration/sign-in')
+        document.location.replace(process.env.NUXT_BASE_DASHBOARD_URL + 'registration/sign-in' + (this.email.length ? '?email=' + this.email : '' ))
       }
     }
   }

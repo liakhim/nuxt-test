@@ -5,12 +5,6 @@
         <h1>#Blog</h1>
       </div>
     </section>
-    <!--        <router-link to="article">-->
-    <!--            To article-->
-    <!--        </router-link>-->
-    <div class="blog__latest-news-container blog-container">
-      <h3>Latest News</h3>
-    </div>
   </div>
 </template>
 <script>

@@ -7,6 +7,7 @@
     .SlideContainer {
       height: 100%;
       max-height: none;
+      // padding-top: 70px;
       @media (max-width: 600px) {
         min-height: 775px;
         flex-direction: column;

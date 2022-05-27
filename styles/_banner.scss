@@ -1,0 +1,205 @@
+.Banner {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //transition: all 0.33s ease;
+
+  .BannerHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    h2 {
+      font-family: "SF UI Text", sans-serif;
+      font-weight: 500;
+      font-size: 2.25rem;
+      line-height: 3rem;
+      text-align: center;
+      color: #1C2445;
+    }
+
+    p {
+      font-family: "SF UI Display", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color: #4E4E4E;
+    }
+  }
+  .BannerContainer {
+    display: flex;
+    padding: 100px 67px;
+    width: 100%;
+    background: #F8F9FB;
+    border-radius: 8px;
+    max-width: 2048px;
+    //transition: all 0.33s ease;
+
+    // Banner Ads
+    .BannerAds {
+      min-width: 50%;
+      display: flex;
+      flex-direction: row;
+      padding: 57px 65px;
+      justify-content: space-between;
+
+      .BannerAdsColumn {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+
+        .BannerAdsColumnAd {
+          display: flex;
+          flex-direction: column;
+          row-gap: 15px;
+
+          h4 {
+            font-family:  "SF UI Display", sans-serif;
+            font-size:    1.25rem;  // 20px
+            line-height:  1.3;      // 28px;
+            color:        #1C2445;
+          }
+
+          p {
+            font-family:  "SF UI Display", sans-serif;
+            font-size:    1rem;     // 16px
+            line-height:  1.5;      // 24px
+            color:        #4E4E4E;
+          }
+        }
+      }
+    }
+
+    // Banner Text
+    .BannerText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 60px;
+      align-items: flex-start;
+      //transition: all 0.33s ease;
+      min-width: 50%;
+
+      &:first-child {
+        margin-left: 67px;
+      }
+
+      // Banner Title
+      .BannerTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        row-gap: 30px;
+        h2 {
+          font-family: 'SF UI Text', sans-serif;
+          font-weight: 500;
+          font-size: 2.25rem; // 36px
+          line-height: 3rem;  // 48px
+          color: #1C2445;
+        }
+        p {
+          font-family: 'SF UI Display', sans-serif;
+          font-size: 1rem;    // 16px
+          line-height: 1.5;   // 24px
+          color: #4E4E4E;
+        }
+      }
+
+      // Banner Items
+      .BannerItems {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        row-gap: 92px;
+        .BannerItem {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          row-gap: 20px;
+          min-width: 256px;
+          margin-right: 90px;
+          .BannerItemImage {
+            height: 45px;
+          }
+          h5 {
+            font-family: 'SF UI Display', sans-serif;
+            font-size: 1.25rem; // 20px
+            line-height: 128%;  // 26px
+            color: #1C2445;
+          }
+          p {
+            font-family: 'SF UI Display', sans-serif;
+            font-size: 1rem;    // 16px
+            line-height: 1.5;   // 24px
+            color: #4E4E4E;
+          }
+        }
+      }
+
+      // Banner List
+      .BannerList {
+        display: flex;
+        flex-direction: column;
+        row-gap: 17px;
+        li {
+          font-family:  'SF UI Display', sans-serif;
+          font-size:    1rem;  // 16px
+          line-height:  1.5;   // 24px
+          color:        #4E4E4E;
+          display: flex;
+          column-gap: 20px;
+          align-items: flex-start;
+          img {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      // Banner Form / Button
+      .BannerForm {}
+    }
+
+    // Banner Image
+    .BannerImage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Notebook
+@media screen and (max-width: 1600px) {
+  .Banner {
+    .BannerContainer {
+      padding: 60px;
+      .BannerAds {
+        padding: 64px 16px 64px 0;
+        column-gap: 50px;
+      }
+      .BannerText {
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      .BannerImage {
+        max-width: 50%;
+      }
+    }
+  }
+}
+@import "banner_tablet";
+@import "banner_mobile";

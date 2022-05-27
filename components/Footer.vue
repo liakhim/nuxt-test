@@ -5,9 +5,9 @@
         <div class="footer__container__menu__item">
           <h5>Solutions</h5>
           <ul class="menu">
-            <li><a :href="landingUrl + '/facebook-ads-creation'">Ads Management</a></li>
-            <li><a :href="landingUrl + '/facebook-ads-automation'">Automated Rules</a></li>
-            <li><a :href="landingUrl + '/facebook-ads-targeting'">Interest Targeting</a></li>
+            <li><a href="/facebook-ads-creation">Ads Management</a></li>
+            <li><a href="/facebook-ads-automation">Automated Rules</a></li>
+            <li><a href="/facebook-ads-targeting">Interest Targeting</a></li>
           </ul>
         </div>
         <div class="footer__container__menu__item">
@@ -35,7 +35,7 @@
           <p>ConvertBomb is powered by joint efforts of experienced marketing, agencies
             and tech experts to bring digital advertising to a completely new level.</p>
           <p class="pt-2">Convertbomb © 2021 All Rights Reserved</p>
-          <a class="privacy-link" :href="'/privacy'">Privacy Policy</a>
+          <a class="privacy-link" href="/privacy">Privacy Policy</a>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@
             </div>
           </div>
         </section>
-        //= ../html-modules/social-block.html
+        <SocialBlock></SocialBlock>
         <main class="MainLayoutMain">
           <section class="Pros">
             <div class="ProsContainer">
@@ -253,56 +253,32 @@
               </div>
             </div>
           </section>
-          //= ../html-modules/faq.html
+          <FAQ/>
           <!--        //= ../html-modules/plans.html-->
-          //= ../html-modules/trial-form-main.html
+          <TrialFormMain/>
         </main>
       </template>
     </LandingLayout>
-    <client-only>
-      <modal name="example">This is an example</modal>
-    </client-only>
-<!--    <client-only :placeholder="'Loading...'">-->
-<!--      <agile :initial-slide="1"-->
-<!--             :slidesToShow="3"-->
-<!--             :centerMode="true">-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1526080676457-4544bf0ebba9?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1426170042593-200f250dfdaf?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <img class="slide"-->
-<!--             src="https://images.unsplash.com/photo-1529815481058-55e5b656f6d6?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"-->
-<!--             alt=""/>-->
-<!--        <template slot="prevButton"><i class="fas fa-chevron-left"></i></template>-->
-<!--        <template slot="nextButton"><i class="fas fa-chevron-right"></i></template>-->
-<!--      </agile>-->
-<!--    </client-only>-->
-    <div>
-      <button class="form-button green">
-        <span>Start free</span>
-      </button>
-    </div>
   </div>
 </template>
 
 <script>
   export default {
+    head() {
+      return {
+        title: 'ConvertBomb | Efficiently Manage Your Digital Marketing',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: `Launch profitable Facebook ad campaigns with less effort.  Analyze ads performance with interactive reports. Automate and optimize ad management with the intuitive automated rules.`
+          }
+        ]
+      }
+    },
     data () {
       return {
+        email: '',
         name: 'test name',
         val: 1
       }

@@ -5,8 +5,8 @@
         <div class="article-container">
           <div v-if="article.attributes"
                class="article-container-header">
-            <button @click="$router.push('/')">
-              <img src="/assets/img/blog/arrow-back.jpg"
+            <button @click="$router.push('/blog')">
+              <img src="../../assets/img/blog/arrow-back.jpg"
                    alt="go back button">
             </button>
             <h2 :class="{'text-preloading-mode': articlePreload}">
@@ -19,11 +19,11 @@
               <div v-if="article.attributes.created_at"
                    class="article-container-create-time">
                 <div class="icon">
-                  <img src="/assets/img/blog/clock-icon.svg"
+                  <img src="../../assets/img/blog/clock-icon.svg"
                        alt="clock icon">
                 </div>
                 <div class="text">
-<!--                  <p>{{convertDate(article.attributes.created_at)}}</p>-->
+                  <p>{{convertDate(article.attributes.created_at)}}</p>
                 </div>
               </div>
               <div class="article-container-create-views-counter">
@@ -70,12 +70,18 @@
     },
     data () {
       return {
-        url: ''
+        url: '',
+        articlePreload: false
       }
     },
     computed: {
       imageUrl () {
         return process.env.NUXT_BASE_URL + 'a_img/' + this.article.attributes.image
+      }
+    },
+    methods: {
+      convertDate (date) {
+        return date && typeof date === 'string' ? date.split('T')[0] : 'Not set date'
       }
     },
     async asyncData({ $axios, params }) {
@@ -84,7 +90,7 @@
     },
   }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
   .empty-text-block {
     margin-top: 50px;
     .line {

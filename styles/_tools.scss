@@ -1,0 +1,198 @@
+.Tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 133px;
+    transition: all 0.33s ease;
+
+    .ToolsTitle > h2 {
+        font-family: "SF UI Text", sans-serif;
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 3rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #1C2445;
+        margin-bottom: 99px;
+    }
+
+    .ToolsContainer {
+        display: flex;
+        justify-content: center;
+
+        .ToolsContainerColumn {
+            display: flex;
+            flex-direction: column;
+
+            .ToolsContainerHorizontal {
+                height: 1px;
+                background: #E8E8E8;
+            }
+
+            .ToolsContainerItem {
+                display: flex;
+                flex-direction: column;
+                width: 220px;
+                margin: 44px 60px;
+                transition: all 0.33s ease-in-out;
+
+                img {
+                    height: 40px;
+                    align-self: flex-start;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    font-family: "SF UI Display", sans-serif;
+                    font-weight: normal;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    color: #4E4E4E;
+                }
+
+                .ToolsContainerItemTitle {
+                    font-family: "SF UI Display", sans-serif;
+                    font-weight: 400;
+                    font-size: 1.25rem; // 20px
+                    line-height: 1.28;  // 26px
+                    color: #1C2445;
+                    margin-bottom: 19px;
+                }
+
+                &:first-child { margin-top: 0 } &:last-child { margin-bottom: 0 }
+            }
+        }
+    }
+
+    .ToolsContainerVertical {
+        min-width: 1px;
+        background: #E8E8E8;
+    }
+}
+
+// Notebook
+@media screen and (max-width: 1600px) {
+    .Tools {
+        .ToolsTitle > h2 {
+            margin-bottom: 55px;
+        }
+        .ToolsContainer {
+            .ToolsContainerColumn {
+                .ToolsContainerItem {
+                    margin: 44px 54px;
+                }
+            }
+        }
+    }
+}
+
+//  Tablet
+@media screen and (max-width: 1320px) {
+    .Tools {
+        .ToolsContainer {
+            .ToolsContainerColumn {
+                .ToolsContainerItem {
+                    margin: 64px min(46px, 4.5vw);
+                    width: 150px;
+                    height: 182px;
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile
+@media screen and (max-width: 899px) {
+    .Tools {
+        .ToolsTitle {
+            padding: 0 20px;
+            h2 {
+                text-align: left;
+                font-size: 2rem;
+                br {
+                    display: none;
+                }
+            }
+        }
+        .ToolsContainer {
+            flex-direction: column;
+            row-gap: 50px;
+            padding: 0 20px;
+            .ToolsContainerColumn {
+                flex-direction: row;
+                justify-content: space-between;
+                column-gap: 20px;
+                .ToolsContainerHorizontal {
+                    width: 0;
+                    opacity: 0;
+                }
+                .ToolsContainerItem {
+                    // width: max(130px, 35%);
+                    width: 50%;
+                    height: auto;
+                    &:first-child { margin: 0 } &:last-child { margin: 0 }
+                    p {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .ToolsContainerVertical {
+                display: none;
+            }
+        }
+        .ToolsContainerVertical {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}
+@media screen and (max-width: 690px) {
+    .Tools {
+        .ToolsTitle {
+            padding: 0 20px;
+            h2 {
+                text-align: left;
+                font-size: 2rem;
+                br {
+                    display: none;
+                }
+            }
+        }
+        .ToolsContainer {
+            flex-direction: column;
+            row-gap: 50px;
+            padding: 0 20px;
+            .ToolsContainerColumn {
+                flex-direction: row;
+                justify-content: space-between;
+                column-gap: 20px;
+                .ToolsContainerHorizontal {
+                    width: 0;
+                    opacity: 0;
+                }
+                .ToolsContainerItem {
+                    // width: max(130px, 35%);
+                    width: 50%;
+                    height: 200px;
+                    .ToolsContainerItemTitle {
+                        min-height: 50px;
+                    }
+                    &:first-child { margin: 0 } &:last-child { margin: 0 }
+                    p {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .ToolsContainerVertical {
+            height: 0;
+            opacity: 0;
+        }
+    }
+}

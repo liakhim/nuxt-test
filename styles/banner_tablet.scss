@@ -1,0 +1,29 @@
+@media screen and (min-width: 900px) and (max-width: 1280px) {
+  .Banner {
+    margin: 100px 0 0 0;
+    .BannerContainer {
+      flex-wrap: wrap;
+      padding: 90px 110px;
+      .BannerAds {
+        padding: 24px 16px 64px 0;
+        column-gap: 50px;
+      }
+      .BannerText {
+        .BannerItems {
+          flex-direction: row;
+          row-gap: 50px;
+        }
+      }
+      .BannerImage {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding-top: 60px;
+        img {
+          position: relative;
+          width: 125% !important;
+        }
+      }
+    }
+  }
+}

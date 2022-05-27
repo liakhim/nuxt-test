@@ -1,0 +1,212 @@
+.Article {
+    // width: calc(100% - 415px);
+    display: flex;
+    // padding: 0 270px 0 315px;
+    justify-content: space-between;
+    // margin-bottom: 200px;
+    max-width: 100%;
+    padding: 0 70px 0 0;
+    // margin-top: 130px;
+    @media (max-width: 1290px) {
+        margin-bottom: 100px;
+        width: 100%;
+    }
+    @media (max-width: 690px) {
+        padding: 0;
+    }
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    h1 {
+        color: #1C2445;
+    }
+
+    .article-container {
+        margin-left: auto;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .article-container-header {
+        display: flex;
+        h2 {
+            margin-left: 25px;
+        }
+        button {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-width: 18px;
+            img {
+                margin-top: 10px;
+                @media (max-width: 1367px) {
+                    margin-top: 5px;
+                }
+            }
+        }
+        .text-preloading-mode {
+            background: #f8f9fb;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            img {
+                display: none;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                width: 150px;
+                height: 100%;
+                background: red;
+                top: 0;
+                left: 0;
+                animation: 1s slide infinite linear;
+                background: linear-gradient(to right, transparent, #fff, transparent);
+            }
+            @keyframes slide {
+                0% {
+                    right: auto;
+                    left: -10%;
+                }
+                100% {
+                    right: auto;
+                    left: 110%;
+                }
+            }
+        }
+    }
+
+    .article-container-create-time {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {}
+        }
+       .text {
+           p {
+               margin-left: 12px;
+               font-size: 15px;
+               line-height: 38px;
+               color: #777777;
+           }
+       }
+    }
+    .article-container-create-views-counter {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        margin-left: 14px;
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 15px;
+            }
+        }
+        .text {
+            p {
+                margin-left: 12px;
+                font-size: 15px;
+                line-height: 38px;
+                color: #777777;
+            }
+        }
+    }
+
+    .article-container-main-photo {
+        margin-top: 35px;
+        width: 100%;
+        background: #F8F9FB;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 1367px) {
+            img {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 690px) {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .empty-image {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e1e1e1;
+        border-radius: 10px;
+        @media (max-width: 690px) {
+            height: 200px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .preloading-mode {
+        background: #f8f9fb;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        img {
+            display: none;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 100%;
+            background: red;
+            top: 0;
+            left: 0;
+            animation: 1s slide infinite linear;
+            background: linear-gradient(to right, transparent, #fff, transparent);
+        }
+        @keyframes slide {
+            0% {
+                right: auto;
+                left: -10%;
+            }
+            100% {
+                right: auto;
+                left: 110%;
+            }
+        }
+    }
+
+    .article-container-title-text {
+        margin-top: 45px;
+    }
+
+    .article-container-main-content {
+        margin-top: 40px;
+        p {
+            margin-top: 30px;
+        }
+    }
+
+    .article-aside {
+        margin-top: 110px;
+    }
+}

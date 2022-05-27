@@ -3,19 +3,19 @@
     <div v-if="!preloading" class="article-preview">
       <div style="max-width: 450px; display:flex;justify-content: center">
         <div class="article-preview-image">
-          <router-link :to="'/blog/' + data.url">
+          <NuxtLink :to="'/blog/' + data.url">
             <img :src="imageUrl"
                  alt="cat-photo">
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
       <div class="article-preview-content">
         <div class="article-preview-content-title">
-          <router-link :to="data.url">
+          <NuxtLink :to="data.url">
             <h2>
               {{data.title}}
             </h2>
-          </router-link>
+          </NuxtLink>
         </div>
         <div class="article-preview-content-text">
           <p>
@@ -23,20 +23,19 @@
           </p>
         </div>
         <div class="redirect-button">
-          <router-link class="custom-button violet"
+          <NuxtLink class="custom-button violet"
                        @click="load()"
                        :to="'/blog/' + data.url"
                        tag="a">
                         <span>
                             Read more
                         </span>
-          </router-link>
+          </NuxtLink>
         </div>
         <div class="d-flex justify-content-start">
           <div class="article-preview-content-time">
             <img src="../../assets/img/blog/clock-icon.svg" alt="clock icon">
-<!--            <p>{{convertDate(data.created_at)}}</p>-->
-            <p>{{data.created_at}}</p>
+            <p>{{convertDate(data.created_at)}}</p>
           </div>
           <div class="article-preview-content-views-counter">
             <img src="../../assets/img/blog/eye.svg" alt="clock icon">
@@ -46,7 +45,7 @@
       </div>
     </div>
     <div class="preloading article-preview" v-if="preloading">
-      <img src="/assets/img/blog/empty-image.svg" alt="">
+      <img src="../../assets/img/blog/empty-image.svg" alt="">
     </div>
   </div>
 </template>
@@ -72,6 +71,9 @@
         if (Object.keys(this.$route.params).length !== 0 ) {
           window.scrollTo(0,0);
         }
+      },
+      convertDate (date) {
+        return date && typeof date === 'string' ? date.split('T')[0] : 'Not set date'
       }
     },
     computed: {

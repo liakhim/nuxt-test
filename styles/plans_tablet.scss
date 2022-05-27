@@ -1,0 +1,56 @@
+@media (max-width: 1365px) {
+  .plans-container {
+    overflow: hidden;
+  }
+  .pros {
+    overflow: hidden;
+  }
+  .plans {
+    overflow: hidden;
+    width: 90%;
+    margin: auto!important;
+    position: relative;
+    &-title {
+      margin: 90px 0 0 0;
+    }
+    &-content {
+      width: calc(100% + 600px);
+      &:after {
+        content: '';
+        position: absolute;
+        height: 750px;
+        width: 40px;
+        background: linear-gradient(90deg, #F8F9FB 0%, rgba(248, 249, 251, 0) 100%);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        right: 0;
+        bottom: 30px;
+      }
+      &:before {
+        content: '';
+        height: 750px;
+        position: absolute;
+        width: 40px;
+        background: linear-gradient(90deg, #F8F9FB 0%, rgba(248, 249, 251, 0) 100%);
+        z-index: 1;
+        left: 0;
+        bottom: 30px;
+      }
+      &-field {
+        padding: 60px 10px 80px;
+        width: auto;
+        max-width: 100%;
+        overflow: hidden;
+        .price-block {
+          // padding: 0;
+          margin: 0 30px!important;
+          width: auto!important;
+          // min-width: auto;
+          max-width: 370px;
+          min-width: 370px;
+          padding: 0 10px 10px!important;
+        }
+      }
+    }
+    .contact-us-block {}
+  }
+}

@@ -49,18 +49,18 @@
 <!--            </div>-->
             <div v-if="!loading" class="blog__main-thirds-article-container">
               <div class="blog__main-third-article-container"
-                   v-for="article in articles"
+                   v-for="article in articles.data"
                    :key = article.id>
-                <ArticlePreview :preloading="articles.length === 0"
+                <ArticlePreview :preloading="articles.data.length === 0"
                                 :data="article.attributes"/>
               </div>
             </div>
-<!--            <div class="blog-pagination">-->
-<!--              <Pagination v-if="Object.keys(getArticlesPagination).length > 0"-->
-<!--                          @change-page="changePage($event)"-->
-<!--                          :current-page="currentPage"-->
-<!--                          :total-pages="getArticlesPagination.total_pages"/>-->
-<!--            </div>-->
+            <div class="blog-pagination">
+              <Pagination v-if="true"
+                          @change-page="changePage($event)"
+                          :current-page="articles.meta.pagination.current_page"
+                          :total-pages="articles.meta.pagination.count"/>
+            </div>
           </div>
         </div>
       </div>
@@ -69,6 +69,9 @@
 </template>
 <script>
   import ArticlePreview from '../../components/blog/ArticlePreview.vue';
+  import CirclePreloader from '../../components/base/CirclePreloader';
+  import Pagination from "../../components/base/Pagination.vue";
+  import axios from "../../.nuxt/axios";
   export default {
     name: 'BlogMain',
     head () {
@@ -77,7 +80,9 @@
       }
     },
     components: {
-      ArticlePreview
+      ArticlePreview,
+      CirclePreloader,
+      Pagination
     },
     data () {
       return {
@@ -87,17 +92,26 @@
     async asyncData({ $axios, $config }) {
       try {
         const articles = await $axios.$get(`webapi/v2/blog?page=1&per_page=4`)
-        return { articles: articles.data }
+        return { articles: articles }
       } catch {
         console.log('error')
       }
     },
+    methods: {
+      changePage (page) {
+        this.$axios.$get('https://api.convertbomb.com/webapi/v2/blog?page=' + page + '&per_page=4')
+          .then((response) => {
+            this.articles = response
+          })
+      }
+    }
   }
 </script>
 <style lang="scss">
   .Blog {
     margin-bottom: 80px;
-    width: calc(100% - 415px);
+    width: 100%;
+    // width: calc(100% - 415px);
     // padding: 0 100px 0 0;
     @media screen and (max-width: 1290px) {
       width: 100%;

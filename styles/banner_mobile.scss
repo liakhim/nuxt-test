@@ -1,0 +1,49 @@
+@media screen and (max-width: 899px) {
+  .Banner {
+    margin-top: 65px;
+    .BannerContainer {
+      flex-direction: column;
+      padding: 55px 20px;
+      .BannerAds {
+        padding: 0 0 64px 0;
+        column-gap: 50px;
+        flex-wrap: wrap-reverse;
+        row-gap: 50px;
+        .BannerAdsColumn {
+          .BannerAdsColumnAd {
+            min-width: 280px;
+          }
+        }
+      }
+      .BannerText {
+        flex-direction: column;
+        row-gap: 45px;
+        align-items: flex-start;
+        margin-left: 0;
+        .BannerTitle {
+          h2 {
+            font-size:   2rem;      // 32px
+            line-height: 2.375rem;  // 38px
+          }
+        }
+        .BannerItems {
+          @media (max-width: 720px) {
+            flex-direction: column;
+          }
+          row-gap: 50px;
+        }
+      }
+
+      .BannerImage {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding-top: 60px;
+        img {
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

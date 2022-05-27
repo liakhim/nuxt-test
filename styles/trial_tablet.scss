@@ -1,0 +1,45 @@
+@media screen and (min-width: 900px) and (max-width: 1280px) {
+.Trial {
+  padding: 0 130px;
+
+  .TrialContainer {
+    flex-direction: column;
+    row-gap: 128px;
+    padding: 0 0;
+
+    .TrialImage {
+      width: 100%;
+
+      img {
+        max-width: 100% !important;
+      }
+    }
+
+    .TrialText {
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
+
+      .TrialTitle {
+        h2 {
+          max-width: 18em;
+
+          br {
+            display: none;
+          }
+        }
+      }
+
+      .TrialReports {
+        .TrialReportsReport {
+          width: 40%;
+        }
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+}

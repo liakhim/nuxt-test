@@ -1,0 +1,36 @@
+// чтобы работало корректно - родителю дать ширину
+.blog__search-container {
+    height: 50px;
+    width: inherit;
+
+    form {
+        width: inherit;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    label {
+        width: 85%;
+    }
+
+    .blog__search-input {
+        background: #FFFFFF;
+        border: 1px solid #D2D6DE;
+        border-radius: 12px;
+        height: 50px;
+    }
+
+    .blog___search-btn {
+        width: 12%;
+        height: 50px;
+        background-color: #8378EC;
+        border: 1px solid #8378EC;
+        border-radius: 12px;
+        img {
+            width: 23px;
+        }
+        &:disabled {
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,165 @@
+.Reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 248px;
+  row-gap: 60px;
+  transition: all 0.33s ease;
+
+  .ReviewsTitle > h2 {
+    font-family:  "SF UI Text", sans-serif;
+    font-weight:  500;
+    font-size:    2.25rem;
+    line-height:  3rem;
+    color:        #1C2445;
+    display: flex;
+    align-items: center;
+  }
+
+  .ReviewsContainer {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    width: 100%;
+    transition: all 0.33s ease;
+
+    .ReviewsContainerItems {
+      display: flex;
+      justify-content: space-between;
+      align-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .ReviewsContainerItemsItem {
+        width: calc(50% - 13px);
+        height: calc(50% - 11px);
+        padding: 30px 24px 50px 50px;
+        background: #f8f9fb;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        .ReviewsContainerItemsItemText {
+          p {
+            width: 320px;
+            font-family: "SF UI Display", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: #4E4E4E;
+            padding-top: 26px;
+          }
+        }
+
+        .ReviewsContainerItemsItemUser {
+          display: flex;
+          align-items: center;
+          width: 240px;
+
+          img {
+            border-radius: 50%;
+          }
+
+          .ReviewsContainerItemsItemUserText {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 4px;
+            margin-left: 25px;
+
+            h5 {
+              font-family: "SF UI Text", sans-serif;
+              font-weight: 500;
+              font-size: 1.25rem;
+              line-height: 1.5;
+              color: #1C2445;
+            }
+
+            p {
+              font-family: "SF UI Display", sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 1rem;
+              line-height: 1.5rem;
+              color: #4E4E4E;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Notebook
+@media screen and (max-width: 1600px) {
+  .Reviews {
+    margin-top: 130px;
+    br {
+      display: none;
+    }
+    .ReviewsContainer {
+      .ReviewsContainerItems {
+        .ReviewsContainerItemsItem {
+          .ReviewsContainerItemsItemUser {
+            width: 205px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media screen and (max-width: 1280px) {
+  .Reviews {
+    row-gap: 40px;
+    br {
+      display: none;
+    }
+    .ReviewsContainer {
+      .ReviewsContainerItems {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        row-gap: 20px;
+        .ReviewsContainerItemsItem {
+          width: 100%;
+          .ReviewsContainerItemsItemText {
+            width: calc(100% - 340px);
+            p {
+              width: 100%;
+            }
+          }
+          .ReviewsContainerItemsItemUser {
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 719px) {
+  .Reviews {
+    margin-top: 90px;
+    .ReviewsContainer {
+      .ReviewsContainerItems {
+        .ReviewsContainerItemsItem {
+          padding: 30px;
+          flex-direction: column;
+          row-gap: 50px;
+          .ReviewsContainerItemsItemText {
+            width: 100%;
+            p {
+            }
+          }
+          .ReviewsContainerItemsItemUser {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

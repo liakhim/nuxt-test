@@ -93,7 +93,7 @@
                    type="checkbox"
                    :class="{ error: errors.length && getError('term') }">
             <span>I accept the terms of the User Agreement and give my consent to Convertbomb to process my personal information on the terms determined by the
-            <a :href="dashboardUrl+ 'privacy-policy'">Privacy Policy.</a>
+            <NuxtLink to="privacy'">Privacy Policy.</NuxtLink>
           </span>
           </label>
           <button @click="createTicket()"
@@ -195,36 +195,23 @@
         }
       },
       createTicket () {
-        // const captcha = document.getElementById('g-recaptcha-response')['value']
-        // 'g-recaptcha-response': captcha,
+        const captcha = document.getElementById('g-recaptcha-response')['value'] || ''
         const data = {
           email: this.contactEmail,
           message: this.comment,
           name: `${this.first_name} ${this.last_name}`,
           terms: this.terms,
-          topic: this.activeTopic.key
+          topic: this.activeTopic.key,
+          'g-recaptcha-response': captcha
         }
-        try {
-          this.$axios.$post(this.dashboardApiUrl + '/webapi/v2/contact-us', data)
+        this.$axios.$post(process.env.NUXT_BASE_URL + 'webapi/v2/contact-us', data).then(() => {
           this.result = true
-          alert('готово')
-        } catch(e) {
-          console.log(e)
-        }
-        // return new Promise((resolve, reject) => {
-        //   this.$axios.$post(this.dashboardApiUrl + '/webapi/v2/contact-us', data)
-        //     .then((res) => {
-        //       this.result = true
-        //       resolve(res)
-        //     })
-        //     .catch((e) => {
-        //       this.result = false
-        //       e.response.data.errors.forEach(error => {
-        //         this.errors.push(error)
-        //       })
-        //       reject(e)
-        //     })
-        // });
+        }).catch(e => {
+          this.result = false
+          e.response.data.errors.forEach(error => {
+            this.errors.push(error)
+          })
+        })
       },
     },
     mounted () {
@@ -241,126 +228,11 @@
   $red-light: #FF6050;
   $green:   #198754;
   $success: $green ;
-  .drop-down {
-    width: 100%;
-    position: relative;
-    margin-bottom: 15px;
-    cursor: pointer;
-  }
-  .drop-down.disabled {
-    opacity: 0.8;
-    //pointer-events: none;
-    cursor: not-allowed;
-  }
-  .drop-down {
-    font-size: 14px;
-    .selected {
-      height: 55px;
-      border-radius: 12px;
-      border: 1px solid #D2D6DE;
-      background:#fff no-repeat scroll right center;
-      padding:0 10px 0 20px;
-      text-decoration:none;
-      color: #333333;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      transition: 0.3s;
-      .text {
-        width: calc(100% - 24px);
-        opacity: 0;
-      }
-      .text.show {
-        opacity: 1;
-      }
-      .icon {
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          transition: 0.3s;
-        }
-      }
-      .icon.open {
-        img {
-          transform: rotate(180deg);
-        }
-      }
-      &:hover {
-        border: 1px solid #9ca1a6;
-      }
-    }
-    .selected.focus {
-      border: 1px solid #80bdff;
-      .text, .icon {
-        opacity: 0.5;
-      }
-    }
-  }
-
-  .drop-down .selected a span{
-    cursor:pointer;
-    display:block;
-    padding:5px;
-  }
-
-  .drop-down .options {
-    position: absolute;
-    overflow: hidden;
-    border-radius: 12px;
-    top: 56px;
-    left: 0;
-    border: 1px solid #D2D6DE;
-    width: 100%;
-    opacity: 0;
-    box-shadow: 0 0 4px rgba(114, 149, 192, 0.25);
-  }
-  .drop-down > .options.show {
-    opacity: 1;
-  }
-
-  .drop-down .options ul{
-    background: #fff none repeat scroll 0 0;
-    list-style: none;
-    padding: 0;
-    left: 0;
-    top: 32px;
-    width: auto;
-    min-width: 170px;
-    max-height: 240px;
-    overflow-y: scroll;
-    & li {
-      padding: 0 20px;
-    }
-  }
-
-  .drop-down .selected span.value, .drop-down .options span.value{
-    // display: none;
-  }
-
-  .drop-down .options ul li{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 47px;
-    text-decoration: none;
-    color: #333333;
-    max-height: 350px;
-  }
-
-  .drop-down .options ul li:hover{
-    background: #F9F9F9;
-    color: #333333;
-    transition: 0.2s ease;
-  }
   .ContactUs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 70px;
+    // padding-top: 70px;
     width: 100vw;
     font-family: "SF UI Text", sans-serif;
     .base-input.error {
@@ -402,11 +274,11 @@
       padding: 45px 195px;
       &::before {
         transform: translateX(-210px);
-        top: 125px;
+        top: 55px;
         position: absolute;
         content: "";
         width: calc(100% - 210px + 1rem);
-        max-width: calc(100% - 210px);
+        max-width: 1800px;
         height: calc(100% - 630px);
         border-radius: 8px;
         background-image: url("../../assets/img/contact/background.png");
@@ -818,6 +690,11 @@
             width: 100%;
             margin-top: 50px;
           }
+        }
+        .ContactUsResponse {
+          min-width: 0;
+          padding: 40px 20px;
+          width: 100%;
         }
       }
     }

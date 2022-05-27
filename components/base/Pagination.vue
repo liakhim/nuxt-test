@@ -1,12 +1,14 @@
 <template>
   <div>
-    <vue-paginate-al
-      :totalPage="totalPages"
-      :currentPage="currentPage"
-      :nextText="'Next'"
-      :prevText="'Previous'"
-      :customActiveBGColor="'#8378EC'"
-      @btnClick="goToFunction"></vue-paginate-al>
+    <client-only>
+      <vue-paginate-al
+        :totalPage="totalPages"
+        :currentPage="currentPage"
+        :nextText="'Next'"
+        :prevText="'Previous'"
+        :customActiveBGColor="'#8378EC'"
+        @btnClick="goToFunction"></vue-paginate-al>
+    </client-only>
   </div>
 </template>
 
